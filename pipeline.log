@@ -1,0 +1,94 @@
+2026-10-05 21:17:25,252 - INFO - ==================================================
+2026-10-05 21:17:25,252 - INFO - PIPELINE START
+2026-10-05 21:17:25,252 - INFO - EXTRACT: reading 3 sources
+2026-10-05 21:17:25,267 - INFO - Extracted 3080 raw records
+2026-10-05 21:17:25,267 - INFO - TRANSFORM: cleaning
+2026-10-05 21:17:25,273 - INFO - Cleaned: 3080 -> 2850 records (230 removed)
+2026-10-05 21:17:25,273 - INFO - VALIDATE: running checks
+2026-10-05 21:17:25,274 - INFO -   no null order_id: PASS
+2026-10-05 21:17:25,274 - INFO -   order_id unique: PASS
+2026-10-05 21:17:25,274 - INFO -   no null customer_id: PASS
+2026-10-05 21:17:25,275 - INFO -   amount positive: PASS
+2026-10-05 21:17:25,275 - INFO -   valid dates: PASS
+2026-10-05 21:17:25,276 - INFO -   no null product: PASS
+2026-10-05 21:17:25,276 - INFO -   category present: PASS
+2026-10-05 21:17:25,276 - INFO -   quantity >= 1: PASS
+2026-10-05 21:17:25,276 - INFO - All 8 checks passed
+2026-10-05 21:17:25,276 - INFO - LOAD: writing to SQLite star schema
+2026-10-05 21:17:25,367 - INFO - Loaded: fact_sales + 3 dims
+2026-10-05 21:17:25,367 - INFO - QUERIES: generating insights
+2026-10-05 21:17:25,374 - INFO - 
+Top 5 products by revenue:
+product   revenue
+  Cable 863261.52
+ Tablet 851469.23
+ Laptop 831310.54
+  Phone 829990.42
+Monitor 817920.94
+2026-10-05 21:17:25,375 - INFO - 
+Revenue by category:
+   category    revenue
+Electronics 3330691.13
+Accessories 2423571.22
+      Audio  771556.82
+2026-10-05 21:17:25,379 - INFO - 
+Monthly revenue trend:
+ year  month   revenue
+ 2025      1 468818.72
+ 2025      2 500211.12
+ 2025      3 587957.15
+ 2025      4 528926.38
+ 2025      5 562776.36
+ 2025      6 601842.54
+ 2025      7 476132.33
+ 2025      8 585632.14
+ 2025      9 557437.38
+ 2025     10 507635.59
+ 2025     11 544208.76
+ 2025     12 594936.94
+ 2026      1   9303.76
+2026-10-05 21:17:25,382 - INFO - 
+Top 5 customers by spend:
+customer_id  total_spend
+      C1160     57478.94
+      C1020     50828.98
+      C1154     47653.03
+      C1275     45676.90
+      C1004     45362.18
+2026-10-05 21:17:25,382 - INFO - 
+Avg order value:
+ avg_order_value
+         2289.76
+2026-10-05 21:17:25,386 - INFO - 
+Orders per month:
+ year  month  orders
+ 2025      1     207
+ 2025      2     209
+ 2025      3     245
+ 2025      4     235
+ 2025      5     253
+ 2025      6     264
+ 2025      7     220
+ 2025      8     252
+ 2025      9     225
+ 2025     10     236
+ 2025     11     239
+ 2025     12     258
+ 2026      1       7
+2026-10-05 21:17:25,388 - INFO - 
+Revenue per product:
+   product   revenue
+     Cable 863261.52
+    Tablet 851469.23
+    Laptop 831310.54
+     Phone 829990.42
+   Monitor 817920.94
+     Mouse 785657.96
+  Keyboard 774651.74
+Headphones 771556.82
+2026-10-05 21:17:25,389 - INFO - 
+Total quantity sold:
+ total_units
+        8606
+2026-10-05 21:17:25,389 - INFO - All 8 queries complete
+2026-10-05 21:17:25,389 - INFO - PIPELINE END
